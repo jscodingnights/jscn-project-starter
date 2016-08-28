@@ -1,0 +1,9 @@
+extends: airbnb
+
+parserOptions:
+    ecmaFeatures:
+        experimentalObjectRestSpread: true
+
+rules:
+    indent: ["error", 4]
+    max-len: ["error", 120]
