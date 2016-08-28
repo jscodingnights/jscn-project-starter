@@ -15,13 +15,25 @@
         {
             "id": 1,
             "candidateId": 1,
-            "voterId": "::ffff:127.0.0.1",
-            "createdOn": "2016-08-28T20:05:43.150Z"
+            "voterId": "democratA",
+            "createdOn": "2016-10-28T20:05:43.150Z"
+        },
+        {
+            "id": 2,
+            "candidateId": 2,
+            "voterId": "democratA",
+            "createdOn": "2016-09-28T20:05:43.150Z"
         },
         {
             "id": 2,
             "candidateId": 1,
-            "voterId": "other.user",
+            "voterId": "democratB",
+            "createdOn": "2016-09-28T20:05:43.150Z"
+        },
+        {
+            "id": 2,
+            "candidateId": 2,
+            "voterId": "some.republican",
             "createdOn": "2016-08-28T20:05:43.150Z"
         }
     ]

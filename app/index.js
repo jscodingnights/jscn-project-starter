@@ -3,6 +3,7 @@ import jsonServer from 'json-server';
 import bodyParser from 'body-parser';
 import db from './db';
 import voteMiddleware from './voteMiddleware';
+import summaryMiddleware from './summaryMiddleware';
 
 const server = jsonServer.create();
 const router = jsonServer.router(db);
@@ -27,10 +28,12 @@ server.get('/echo', (req, res) => {
 server.use('/candidates/:id?', readOnlyRoute(['put', 'delete']));
 server.use('/votes/:id?', readOnlyRoute(['put', 'delete']));
 server.use('/votes', voteMiddleware(db));
+server.use('/summary', summaryMiddleware(db));
 
 // Use default router
 server.use(router);
 server.use((err, req, res, next) => {
+    console.log(err.stack);
     return res.send(500, {
         success: false,
         message: err.message

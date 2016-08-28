@@ -1,5 +1,7 @@
 import { find } from 'lodash';
-import { deleteVotesByIp, getCandidateById } from './dbUtil';
+
+const getCandidateById = ({ candidates }, id) =>
+    find(candidates, { id });
 
 const ensureBody = (req) => req.body = req.body || {};
 const ensureVoterId = (req) => req.body.voterId = req.ip;

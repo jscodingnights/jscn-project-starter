@@ -123,4 +123,17 @@ describe('/votes', () => {
     });
 });
 
+describe('/summary', () => {
+    it('GET /summary => list of candidates and their vote counts', (done) => {
+        request(app)
+            .get('/summary')
+            .expect('Content-Type', /json/)
+            .expect(200)
+            .expect((res) => {
+                expect(res.body.byCandidateId).toEqual({ '1': 2, '2': 2 });
+            })
+            .end(done);
+    });
+});
+
 
