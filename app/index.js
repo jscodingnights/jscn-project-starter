@@ -25,13 +25,12 @@ server.get('/echo', (req, res) => {
 });
 
 server.use('/candidates/:id?', readOnlyRoute(['put', 'delete']));
-server.use('/votes/:id?', readOnlyRoute(['put']));
+server.use('/votes/:id?', readOnlyRoute(['put', 'delete']));
 server.use('/votes', voteMiddleware(db));
 
 // Use default router
 server.use(router);
 server.use((err, req, res, next) => {
-    console.log('ERROR', err.stack);
     return res.send(500, {
         success: false,
         message: err.message

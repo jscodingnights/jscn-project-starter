@@ -2,35 +2,21 @@
 import expect from 'expect';
 import request from 'supertest';
 import app from '../app';
+import db from '../app/db';
 
 describe('/candidates', () => {
     it('GET /candidates => list of candidates', (done) => {
         request(app)
             .get('/candidates')
             .expect('Content-Type', /json/)
-            .expect(200, [
-                {
-                    id: 1,
-                    name: 'Hillary Clinton',
-                    photoUrl: 'http://www.newsbiscuit.com/wp-content/uploads/2015/10/hillary-clinton-womenjpeg-045d7.jpg',
-                },
-                {
-                    id: 2,
-                    name: 'Donald Trump',
-                    photoUrl: 'http://images.huffingtonpost.com/2016-07-15-1468607338-43291-DonaldTrumpangry.jpg',
-                }
-            ])
+            .expect(200, db.candidates)
             .end(done);
     });
     it('GET /candidates/id => single candidate', (done) => {
         request(app)
             .get('/candidates/1')
             .expect('Content-Type', /json/)
-            .expect(200, {
-                id: 1,
-                name: 'Hillary Clinton',
-                photoUrl: 'http://www.newsbiscuit.com/wp-content/uploads/2015/10/hillary-clinton-womenjpeg-045d7.jpg',
-            })
+            .expect(200, db.candidates[0])
             .end(done);
     });
     it('POST /candidates => create new candidate', (done) => {
@@ -67,43 +53,34 @@ describe('/votes', () => {
         request(app)
             .get('/votes')
             .expect('Content-Type', /json/)
-            .expect(200, [
-                {
-                    "id": 1,
-                    "candidateId": 1,
-                    "voterId": "::ffff:127.0.0.1",
-                    "createdOn": "2016-08-28T20:05:43.150Z"
-                }
-            ])
+            .expect(200, db.votes)
             .end(done);
     });
     it('GET /votes/id => single vote', (done) => {
         request(app)
             .get('/votes/1')
             .expect('Content-Type', /json/)
-            .expect(200, {
-                "id": 1,
-                "candidateId": 1,
-                "voterId": "::ffff:127.0.0.1",
-                "createdOn": "2016-08-28T20:05:43.150Z"
-            })
+            .expect(200, db.votes[0])
             .end(done);
     });
     it('POST /votes => valid vote cast', (done) => {
         request(app)
             .post('/votes')
             .send({ candidateId: 2 })
+            .expect(201)
             .expect(res => {
-                expect(res.body.id).toEqual(1);
+                expect(res.body.id).toExist();
                 expect(res.body.candidateId).toEqual(2);
             })
             .end(done);
     });
     it('POST /votes => another valid vote replaces the previous', (done) => {
+        let initialLength;
         request(app)
             .get('/votes')
             .expect(res => {
                 const me = res.body[0];
+                initialLength = res.body.length;
                 expect(me.id).toEqual(1);
                 expect(me.candidateId).toEqual(1);
             }).end(() => {
@@ -114,10 +91,8 @@ describe('/votes', () => {
                         request(app)
                             .get('/votes')
                                 .expect(res => {
-                                    const me = res.body[0];
-                                    console.log(JSON.stringify(res.body, null, 2));
-                                    expect(res.body.length).toEqual(1);
-                                    expect(me.id).toEqual(1);
+                                    const me = res.body[1];
+                                    expect(res.body.length).toEqual(initialLength);
                                     expect(me.candidateId).toEqual(2);
                                 })
                                 .end(done);
@@ -159,6 +134,14 @@ describe('/votes', () => {
         request(app)
             .put('/votes/1')
             .send({ candidateId: 1000 })
+            .expect(res => {
+                expect(res.status).toEqual(403);
+            })
+            .end(done);
+    });
+    it('DELETE /votes/1 => should not delete votes', (done) => {
+        request(app)
+            .delete('/votes/1')
             .expect(res => {
                 expect(res.status).toEqual(403);
             })
