@@ -130,7 +130,8 @@ describe('/summary', () => {
             .expect('Content-Type', /json/)
             .expect(200)
             .expect((res) => {
-                expect(res.body.byCandidateId).toEqual({ '1': 2, '2': 2 });
+                expect(res.body.candidateScores).toEqual({ '1': 2, '2': 4 });
+                expect(res.body.winningCandidate.name).toEqual('Donald Trump');
             })
             .end(done);
     });
