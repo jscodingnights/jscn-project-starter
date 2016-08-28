@@ -17,12 +17,8 @@ export default (db) => (req, res, next) => {
         ensureVoterId(req);
         ensureCreatedOn(req);
 
-        deleteVotesByIp(db, req.ip);
-
         if (!validateCandidate(db)(req)) {
             return next(new Error('Invalid vote, missing required fields (candidateId, voterId)'));
-        } else {
-            console.log('VALID', req.body.candidateId);
         }
     }
     next();

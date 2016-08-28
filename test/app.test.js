@@ -74,32 +74,6 @@ describe('/votes', () => {
             })
             .end(done);
     });
-    it('POST /votes => another valid vote replaces the previous', (done) => {
-        let initialLength;
-        request(app)
-            .get('/votes')
-            .expect(res => {
-                const me = res.body[0];
-                initialLength = res.body.length;
-                expect(me.id).toEqual(1);
-                expect(me.candidateId).toEqual(1);
-            }).end(() => {
-                request(app)
-                    .post('/votes')
-                    .send({ candidateId: 2 })
-                    .end(() => {
-                        request(app)
-                            .get('/votes')
-                                .expect(res => {
-                                    const me = res.body[1];
-                                    expect(res.body.length).toEqual(initialLength);
-                                    expect(me.candidateId).toEqual(2);
-                                })
-                                .end(done);
-                    });
-            })
-
-    });
     it('POST /votes => missing candidateId', (done) => {
         request(app)
             .post('/votes')
