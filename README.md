@@ -2,7 +2,7 @@
 
 This is a shared framework for JSCN meetup projects.  
 
-It will allow people to work on various technologies with a variety of available "themes" in which to build.
+It contains a number of challenges tailored toward experimenting with and learning different technologies via a variety of available application "challenges" to build.
 
 Futher, projects can live over time in one place, and more importantly (for me :)) it will allow for infrastructure reuse going forward.
 
@@ -10,7 +10,8 @@ Futher, projects can live over time in one place, and more importantly (for me :
 
 ## Available Challenges
 
-* [US Presidents](/challenges/us-presidents.md) - Create a voting app and choose the next leader of the free world!
+* [US President Voting App](/challenges/us-presidents.md) - Create a voting app and choose the next leader of the free world!
+
 
 ## Challenge Setup
 

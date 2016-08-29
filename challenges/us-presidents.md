@@ -1,11 +1,9 @@
 # US President Voting App
-Create an app that some random citizen can use to vote in the upcoming presidental election!
-
-Use React or any client of your choice!
+Create an app that a US citizen could use to vote in the upcoming presidental election!
 
 **Remember**: React is a view engine!  Focus on good looking UI. Pick one single bit of functionality to focus on first before trying to implement the entire app.
 
-## App Spec
+## Challenge Spec
 
 Citizens can:
 
@@ -16,7 +14,7 @@ Citizens can:
 
 Citizens are unique by their IP address.
 
-## Recommended Workflow
+## Getting Started: Recommended Workflow
 
 If you want to do React + Redux:
 
