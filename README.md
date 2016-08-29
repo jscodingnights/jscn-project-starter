@@ -10,7 +10,7 @@ Futher, projects can live over time in one place, and more importantly (for me :
 
 ## Available Challenges
 
-* [US Presidents](/challenges/us-presidents) - Create a voting app and choose the next leader of the free world!
+* [US Presidents](/challenges/us-presidents.md) - Create a voting app and choose the next leader of the free world!
 
 ## Challenge Setup
 
