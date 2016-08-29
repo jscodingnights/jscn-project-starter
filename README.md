@@ -1,5 +1,5 @@
 # JavaScript Coding Nights - Project Starter
-This project will serve as the framework for future JSCN meetups.  It will allow people to work on their projects over time in one place, and more importantly (for me :)) it will allow for infrastructure reuse going forward.
+This project will serve as a shared framework for JSCN meetup projects.  It will allow people to work on their projects over time in one place, and more importantly (for me :)) it will allow for infrastructure reuse going forward.
 
 ## Challenges
 
