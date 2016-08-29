@@ -6,7 +6,7 @@
   "scripts": {
     "start": "babel-node server/index.js",
     "lint": "eslint .",
-    "test": "mocha --require babel-register server/**/*.test.js -R spec --ui bdd"
+    "test": "mocha --require babel-register **/*.test.js -R spec --ui bdd"
   },
   "directories": {
     "test": "test"

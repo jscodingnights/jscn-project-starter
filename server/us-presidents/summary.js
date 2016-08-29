@@ -20,9 +20,9 @@ const selectMaxCandidate = (candidateScores) => {
         const candidateVotes = candidateScores[cid];
         return candidateVotes > max ? parseInt(cid, 10) : winning;
     });
-}
+};
 
-export default ({ votes, candidates }) => (req, res, next) => {
+export default ({ votes, candidates }) => (req, res) => {
     const allVotesByCitizen = groupBy(votes, 'voterId');
     const countingVotesByCitizen = latestVoteByCitizen(allVotesByCitizen);
     const candidateScores = countByCandidateId(countingVotesByCitizen);
@@ -34,7 +34,7 @@ export default ({ votes, candidates }) => (req, res, next) => {
         allVotesByCitizen,
         countingVotesByCitizen,
         candidateScores,
-        winningCandidate
+        winningCandidate,
     };
     return res.json(summary);
 };

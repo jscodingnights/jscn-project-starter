@@ -15,7 +15,7 @@ Futher, projects can live over time in one place, and more importantly (for me :
 
 ## Challenge Setup
 
-### Step 1: Clone/Fork this repository.
+### Step 1: Fork & clone this repository.
 
 ```
 git clone https://github.com/jscodingnights/jscn-project-starter.git

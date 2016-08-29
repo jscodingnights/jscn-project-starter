@@ -1,29 +1,29 @@
 import { find } from 'lodash';
 
-const bodyKeyExists = (req) => (key) => (collection)  => {
+const bodyKeyExists = (req) => (key) => (collection) => {
     const id = req.body[key];
-    return find(collection, { id })
+    return find(collection, { id });
 };
 
 const setBody = (values) => (req) => {
     req.body = {
         ...req.body,
-        ...values
+        ...values,
     };
     return req;
 };
 
 export default (db) => (req, res, next) => {
-    console.log('BODY', req.body);
     if (req.method === 'POST') {
         setBody({
             voterId: req.ip,
-            createdOn: new Date()
+            createdOn: new Date(),
         })(req);
 
         if (!bodyKeyExists(req)('candidateId')(db.candidates)) {
             return next(new Error('Invalid vote, missing required fields (candidateId, voterId)'));
         }
     }
-    next();
+
+    return next();
 };
