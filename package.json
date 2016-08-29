@@ -1,12 +1,12 @@
 {
-  "name": "us-presidents-server",
+  "name": "jscn-starter",
   "version": "1.0.0",
   "description": "Vote for the next US president, using React or whatever client of choice",
   "main": "index.js",
   "scripts": {
-    "start": "babel-node app/index.js",
+    "start": "babel-node server/index.js",
     "lint": "eslint .",
-    "test": "mocha --require babel-register test/*.js -R spec --ui bdd"
+    "test": "mocha --require babel-register server/**/*.test.js -R spec --ui bdd"
   },
   "directories": {
     "test": "test"
@@ -34,12 +34,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jscodingnights/us-presidents-server.git"
+    "url": "git+https://github.com/jscodingnights/jscn-starter.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jscodingnights/us-presidents-server/issues"
+    "url": "https://github.com/jscodingnights/jscn-starter/issues"
   },
-  "homepage": "https://github.com/jscodingnights/us-presidents-server#readme"
+  "homepage": "https://github.com/jscodingnights/jscn-starter#readme"
 }

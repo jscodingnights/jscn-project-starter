@@ -1,8 +1,8 @@
 /* eslint-env node, mocha */
 import expect from 'expect';
 import request from 'supertest';
-import app from '../server';
-import db from '../server/db';
+import app from '../index';
+import db from '../db';
 
 describe('/candidates', () => {
     it('GET /candidates => list of candidates', (done) => {

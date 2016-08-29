@@ -1,26 +1,29 @@
-# us-presidents
+# JavaScript Coding Nights - Project Starter
 
-## Idea Specification
+## Step 1: Clone this repository.
 
-Create an app that allows a citizen to cast their vote.  
+```
+git clone https://github.com/jscodingnights/jscn-project-starter.git
+```
 
-Citizens can see a list of candidates and vote for one of them.  
-Citizens can vote as much as they like, but only the last one counts.
-Citizens can see which candidate was voted for by every other citizen.
-Citizens can see which candidate is the current winner
+## Step 2: Create a branch for your work on the night's task:
 
+```
+git checkout -b us-presidents
+```
 
-Vote for the next US president, using React or whatever client of choice
+## Step 3: Create the project from one of the client starters
 
-You do not need to log in. :)
+For example, if you're working on the "us-presidents" challenge (this name is arbitrary), and you want to use React for the web, copy the clients/React (this name is NOT arbitrary) folder into /challenges:
 
-React is a view engine!  Focus on good looking UI, or pick one single bit of functionality to focus on.
+```
+cp -r clients/React challenges/us-presidents
+```
 
+## Step 4: Open your project, npm install, and start coding!
 
-What I recommend if you want to do React + Redux:
-Focus on consuming the summary API
-Create a single reducer for consuming that data
-Use react-redux to connect react components to the global state
-Make a nice UI for the data there
-
-
+```
+cd challenges/us-presidents
+npm install
+npm start
+```
