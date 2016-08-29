@@ -14,6 +14,7 @@ const setBody = (values) => (req) => {
 };
 
 export default (db) => (req, res, next) => {
+    console.log('BODY', req.body);
     if (req.method === 'POST') {
         setBody({
             voterId: req.ip,

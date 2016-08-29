@@ -25,9 +25,9 @@ If you want to do React + Redux:
 * Use react-redux to connect react components to the global state
 * Make a nice UI for the available data
 
-## API Documentation
+## API Documentation: (URL ROOT: `/api/us-presidents`)
 
-###`GET /summary` - Get entire app summary
+###`GET /api/us-presidents/summary` - Get entire app summary
 ```json
 {
     "candidates": [
@@ -74,7 +74,7 @@ If you want to do React + Redux:
 }
 ```
 
-###`GET /candidates` - Retrieve the list of candidates
+###`GET /api/us-presidents/candidates` - Retrieve the list of candidates
 **response**
 ```json
 [
@@ -91,7 +91,7 @@ If you want to do React + Redux:
 ]
 ```
 
-###`POST /candidates` - Create a new candidate
+###`POST /api/us-presidents/candidates` - Create a new candidate
 **payload**
 ```json
 {
@@ -108,7 +108,7 @@ If you want to do React + Redux:
 }
 ```
 
-###`GET /votes` - Get all votes
+###`GET /api/us-presidents/votes` - Get all votes
 **response**
 ```json
 [
@@ -127,7 +127,7 @@ If you want to do React + Redux:
 ]
 ```
 
-###`POST /votes` - Vote!
+###`POST /api/us-presidents/votes` - Vote!
 **payload**
 ```json
 {

@@ -16,15 +16,8 @@ const readOnlyRoute = (methods) => {
     return router;
 };
 
-// Set default middlewares (logger, static, cors and no-cache)
 server.use(bodyParser.json());
 server.use(middlewares);
-
-// Add custom routes before JSON Server router
-server.get('/echo', (req, res) => {
-  res.jsonp(req.query);
-});
-
 server.use('/candidates/:id?', readOnlyRoute(['put', 'delete']));
 server.use('/votes/:id?', readOnlyRoute(['put', 'delete']));
 server.use('/votes', voteMiddleware(db));
@@ -32,15 +25,5 @@ server.use('/summary', summaryMiddleware(db));
 
 // Use default router
 server.use(router);
-server.use((err, req, res, next) => {
-    console.log(err.stack);
-    return res.send(500, {
-        success: false,
-        message: err.message
-    });
-})
-server.listen(3000, () => {
-  console.log('JSON Server is running');
-});
 
 export default server;
