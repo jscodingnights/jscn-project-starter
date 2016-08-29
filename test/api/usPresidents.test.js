@@ -1,8 +1,9 @@
 /* eslint-env node, mocha */
 import expect from 'expect';
 import request from 'supertest';
-import app from '../server';
-import db from '../server/us-presidents/db';
+
+import app from '../../api/index';
+import db from '../../api/us-presidents/db';
 
 const rootUrl = '/api/us-presidents';
 
