@@ -14,7 +14,7 @@ Futher, projects can live over time in one place, and more importantly (for me :
 
 ## Challenge Setup
 
-### Step 1: Clone this repository.
+### Step 1: Clone/Fork this repository.
 
 ```
 git clone https://github.com/jscodingnights/jscn-project-starter.git
@@ -31,7 +31,7 @@ git checkout -b us-presidents
 For example, if you're working on the **us-presidents** challenge, and you want to use the `React` client starter, copy the contents of the `clients/React` folder into `/challenges/us-presidents`:
 
 ```
-cp -R clients/React/ challenges/us-presidents/
+cp -R ./clients/React/. ./challenges/us-presidents
 ```
 
 ### Step 4: Initial commit
