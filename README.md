@@ -29,10 +29,10 @@ git checkout -b us-presidents
 
 ### Step 3: Create the project from one of the client starters
 
-For example, if you're working on the **us-presidents** challenge, and you want to use the `React` client starter, copy the contents of the `clients/React` folder into `/challenges/us-presidents`:
+For example, if you're working on the **us-presidents** challenge, and you want to use the `React` client starter, copy the contents of the `starters/React` folder into `/challenges/us-presidents`:
 
 ```
-cp -R ./clients/React/. ./challenges/us-presidents
+cp -R ./starters/React/. ./challenges/us-presidents
 ```
 
 ### Step 4: Initial commit
