@@ -23,8 +23,4 @@ Create a single reducer for consuming that data
 Use react-redux to connect react components to the global state
 Make a nice UI for the data there
 
-Master bootstrap for playing around that has everything installed and configured, with certain libraries marked as npm install.
 
-
-
-App for making sample projects.
