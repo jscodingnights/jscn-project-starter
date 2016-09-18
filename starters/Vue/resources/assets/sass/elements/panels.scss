@@ -1,0 +1,20 @@
+.app-screen {
+	.tab-pane {
+		display: block;
+	}
+
+	.panel-body {
+		font-weight: 300;
+	}
+
+    .panel-heading {
+        font-size: 16px;
+        font-weight: 300;
+    }
+
+	.panel-flush {
+		.panel-body, .panel-header {
+			padding: 0;
+		}
+	}
+}

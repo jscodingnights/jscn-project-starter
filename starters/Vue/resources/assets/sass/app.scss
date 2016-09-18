@@ -1,0 +1,72 @@
+/*
+ * Variables...
+ */
+ 
+$border-radius-base: 0;
+$brand-primary: #2B5A84;
+$active-icon-color: #6CC94D;
+$btn-border-radius-base: 4px;
+$btn-font-weight: 300;
+$font-family-sans-serif: "Lato", Helvetica, Arial, sans-serif !default;
+$font-size-base: 14px;
+$navbar-height: 65px;
+
+/*
+ * Bootstrap CSS...
+ */
+ 
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+/**
+ * Elements
+ */
+
+@import "elements/buttons";
+@import "elements/forms";
+@import "elements/modals";
+@import "elements/nav";
+@import "elements/panels";
+@import "elements/tables";
+@import "elements/tooltips";
+
+/**
+ * Components
+ */
+
+@import "components/tabs";
+
+/*
+ * Misc.
+ */
+
+html {
+	min-height: 100%;
+	position: relative;
+}
+
+body {
+	font-weight: 300;
+	margin-bottom: 80px;
+}
+
+.footer {
+	background-color: #f5f5f5;
+	border-top: 1px solid #e7e7e7;
+	bottom: 0;
+	height: 80px;
+	position: absolute;
+	width: 100%;
+
+	.footer-social-icons {
+		font-size: 32px;
+		padding-top: 18px;
+
+		a {
+			color: #777;
+		}
+	}
+}
+
+[v-cloak] {
+    display: none;
+}
