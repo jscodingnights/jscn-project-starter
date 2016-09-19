@@ -1,8 +1,8 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import http from 'http';
-import usPresidents from './us-presidents';
-import chat from './chat';
+import usPresidents from './api/us-presidents';
+import chat from './api/chat';
 
 const app = express();
 const server = http.createServer(app);
