@@ -2,7 +2,7 @@
 import expect from 'expect';
 import request from 'supertest';
 
-import app from '../../api/index';
+import app from '../../index';
 import db from '../../api/us-presidents/db';
 
 const rootUrl = '/api/us-presidents';
