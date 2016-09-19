@@ -1,6 +1,7 @@
 {
-  "private": true,
   "scripts": {
+    "prestart": "tsc",
+    "start": "python -m SimpleHTTPServer 8000",
     "dev": "tsc --watch"
   },
   "devDependencies": {
