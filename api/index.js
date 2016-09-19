@@ -20,8 +20,8 @@ app.use((err, req, res, next) => {
     });
 });
 
-server.listen(process.env.PORT || 3001, () => {
-  console.log('JSCN Server is running: 3001');
+server.listen(process.env.PORT || 3000, '0.0.0.0', () => {
+  console.log('JSCN Server is running: 3000');
 });
 
 export default app;
