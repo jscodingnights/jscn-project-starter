@@ -11,7 +11,15 @@ Futher, projects can live over time in one place, and more importantly (for me :
 ## Available Challenges
 
 * [US President Voting App](/challenges/us-presidents.md) - Create a voting app and choose the next leader of the free world!
+* [JSCN Chat](/challenges/chat.md) - Create a chat client to chat with other JSCN members.
 
+## Server & Data
+
+You can either run your own local server by running `npm install && npm start` in the JSCN Project Starter root, or you can consume the API (and share your data/chat with others at the meetup) by pointing your client at our heroku-hosted API:
+
+```
+https://jscn.herokuapp.com/
+```
 
 ## Challenge Setup
 
