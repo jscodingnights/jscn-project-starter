@@ -4,7 +4,7 @@ This is a shared framework for JSCN meetup projects.
 
 It contains a number of challenges tailored toward experimenting with and learning different technologies via a variety of available application "challenges" to build.
 
-Futher, projects can live over time in one place, and more importantly (for me :)) it will allow for infrastructure reuse going forward.
+Also, it contains a set of project "starters" which are nice-to-use development environments for experimenting with the specific technology, often based on official project inits, if available.
 
 **It is recommended that you star this repository :D**
 
