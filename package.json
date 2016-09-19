@@ -4,7 +4,7 @@
   "description": "Vote for the next US president, using React or whatever client of choice",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/.bin/babel-node index.js",
+    "start": "node index.js",
     "lint": "eslint .",
     "test": "mocha --require babel-register test/**/*.test.js -R spec --ui bdd"
   },
