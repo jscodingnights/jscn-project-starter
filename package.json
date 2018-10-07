@@ -17,7 +17,7 @@
     "body-parser": "~1.15.2",
     "express": "~4.14.0",
     "json-server": "~0.8.18",
-    "lodash": "~4.15.0",
+    "lodash": "~4.17.5",
     "node-uuid": "~1.4.7",
     "socket.io": "^1.4.5"
   },
